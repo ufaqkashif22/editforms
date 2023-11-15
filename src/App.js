@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-
-function App() {
+import ViewForm from './components/ViewForm';
+const App = () => {
+  const [fields, setFields] = useState([
+    {id :1, label: "Name", value: "" },
+    {id :2, label: "Contact", value: "" },
+    {id :3, label: "Email", value: "" },
+    {id :4, label: "Age", value: "" }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+        <h2> My Form</h2>
+        <ViewForm fields={fields} setFields={setFields}/>
     </div>
   );
 }
